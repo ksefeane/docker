@@ -1,0 +1,23 @@
+docker
+------
+
+docker --version
+docker run hello-world (sudo)
+	sudo groupadd docker
+	sudo usermod -aG docker $USER
+	(restart session)
+	newgrp docker
+docker image ls
+docker container ls -all
+
+build
+-----
+docker image build -t bulletinboard:1.0
+
+run image as container
+----------------------
+docker container run --publish 8000:8080 --detach --name bb bulletinboard:1.0
+
+delete container
+----------------
+docker container rm --force bb
